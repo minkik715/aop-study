@@ -1,33 +1,30 @@
-package com.study.aop.template_method_pattern_code
+package com.study.aop.strategy_pattern_code
 
 import com.study.aop.item.Item
 import com.study.aop.logger.LogServiceDirtyCode
+import com.study.aop.logger.strategy_pattern.LogHelperStrategy
 import com.study.aop.logger.template_method_pattern.LogHelperTemplateMethod
 import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.stereotype.Repository
 
 @Repository
 @Qualifier("ItemRepositoryTemplateMethod")
-class ItemRepositoryTemplateMethod(
+class ItemRepositoryStrategy(
     private val logService: LogServiceDirtyCode
 ) {
 
     val storage = hashMapOf<String, Item>()
 
     fun findItems(): List<Item> {
-        return object : LogHelperTemplateMethod<List<Item>>(logService) {
-            override fun call(): List<Item> {
-                return storage.values.toList()
-            }
+        return LogHelperStrategy(logService) {
+            storage.values.toList()
         }.execute("ItemRepositoryTemplateMethod/findItems")
     }
 
     fun saveItem(item: Item): Item {
-        return object : LogHelperTemplateMethod<Item>(logService) {
-            override fun call(): Item {
-                storage[item.id] = item
-                return storage[item.id] ?: throw IllegalArgumentException("생성 버그")
-            }
+        return LogHelperStrategy(logService) {
+            storage[item.id] = item
+            storage[item.id] ?: throw IllegalArgumentException("생성 버그")
         }.execute("ItemRepositoryTemplateMethod/saveItem")
     }
 }

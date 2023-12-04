@@ -3,7 +3,7 @@ package com.study.aop.logger.template_method_pattern
 import com.study.aop.logger.LogServiceDirtyCode
 import com.study.aop.logger.data.Trace
 
-abstract class AbstractLogHelper<T>(
+abstract class LogHelperTemplateMethod<T>(
     private val logService: LogServiceDirtyCode
 ) {
 
@@ -22,7 +22,4 @@ abstract class AbstractLogHelper<T>(
             throw it
         }.getOrThrow()
     }
-
-
-
 }
