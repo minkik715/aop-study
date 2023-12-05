@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.stereotype.Repository
 
 @Repository
-@Qualifier("ItemRepositoryDirtyCode")
 class ItemRepositoryDirtyCode(
     private val logService: LogServiceDirtyCode
 ) {

@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.stereotype.Service
 
 @Service
-@Qualifier("ItemServiceTemplateMethod")
 class ItemServiceTemplateMethod(
     private val itemRepository: ItemRepositoryTemplateMethod,
     private val logService: LogServiceDirtyCode

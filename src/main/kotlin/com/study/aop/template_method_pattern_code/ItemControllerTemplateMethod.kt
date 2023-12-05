@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.*
 
 
 @RestController
-@Qualifier("ItemControllerTemplateMethod")
 @RequestMapping("/api/template-method/item")
 class ItemControllerTemplateMethod(
     private val itemService: ItemServiceTemplateMethod,

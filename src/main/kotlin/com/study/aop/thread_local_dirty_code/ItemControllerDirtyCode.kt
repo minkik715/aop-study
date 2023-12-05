@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.*
 
 
 @RestController
-@Qualifier("ItemControllerDirtyCode")
 @RequestMapping("/api/dirty-code/item")
 class ItemControllerDirtyCode(
     private val itemService: ItemServiceDirtyCode,

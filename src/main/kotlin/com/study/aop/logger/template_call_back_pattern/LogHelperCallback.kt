@@ -1,20 +1,18 @@
-package com.study.aop.logger.strategy_pattern
+package com.study.aop.logger.template_call_back_pattern
 
 import com.study.aop.logger.LogServiceDirtyCode
 import com.study.aop.logger.data.Trace
-import com.study.aop.logger.template_call_back_pattern.LogCallCallBack
 
-class LogHelperStrategy<T>(
+class LogHelperCallback<T>(
     private val logService: LogServiceDirtyCode,
-    private val logCallStrategy: LogCallCallBack<T>,
 ) {
 
 
-    fun execute(message: String): T {
+    fun execute(message: String, logCallCallback: LogCallCallBack<T>): T {
         var trace: Trace? = null
         return runCatching {
             trace = logService.begin(message)
-            logCallStrategy.call()
+            logCallCallback.call()
         }.onSuccess {
             logService.finish(trace!!)
         }.onFailure {

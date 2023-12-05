@@ -4,13 +4,9 @@ import com.study.aop.item.Item
 import com.study.aop.item.ItemDTO
 import com.study.aop.logger.LogServiceDirtyCode
 import com.study.aop.logger.strategy_pattern.LogHelperStrategy
-import com.study.aop.logger.template_method_pattern.LogHelperTemplateMethod
-import com.study.aop.template_method_pattern_code.ItemRepositoryTemplateMethod
-import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.stereotype.Service
 
 @Service
-@Qualifier("ItemServiceTemplateMethod")
 class ItemServiceStrategy(
     private val itemRepository: ItemRepositoryStrategy,
     private val logService: LogServiceDirtyCode
