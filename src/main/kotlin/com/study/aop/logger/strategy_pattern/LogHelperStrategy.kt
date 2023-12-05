@@ -6,7 +6,7 @@ import com.study.aop.logger.template_call_back_pattern.LogCallCallBack
 
 class LogHelperStrategy<T>(
     private val logService: LogServiceDirtyCode,
-    private val logCallStrategy: LogCallCallBack<T>,
+    private val logCallStrategy: LogCallStrategy<T>,
 ) {
 
 

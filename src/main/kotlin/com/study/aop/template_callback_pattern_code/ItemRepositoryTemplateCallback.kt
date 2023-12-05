@@ -7,19 +7,19 @@ import org.springframework.stereotype.Repository
 
 @Repository
 class ItemRepositoryTemplateCallback(
-    private val logService: LogServiceDirtyCode
+    private val logHelperCallback: LogHelperCallback
 ) {
 
     val storage = hashMapOf<String, Item>()
 
     fun findItems(): List<Item> {
-        return LogHelperCallback<List<Item>>(logService).execute("ItemRepositoryTemplateMethod/findItems") {
+        return logHelperCallback.execute("ItemRepositoryTemplateMethod/findItems") {
             storage.values.toList()
         }
     }
 
     fun saveItem(item: Item): Item {
-        return LogHelperCallback<Item>(logService).execute("ItemRepositoryTemplateMethod/saveItem") {
+        return logHelperCallback.execute("ItemRepositoryTemplateMethod/saveItem") {
             storage[item.id] = item
             storage[item.id] ?: throw IllegalArgumentException("생성 버그")
         }

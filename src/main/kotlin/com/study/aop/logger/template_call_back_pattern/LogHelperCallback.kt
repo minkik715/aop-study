@@ -2,13 +2,15 @@ package com.study.aop.logger.template_call_back_pattern
 
 import com.study.aop.logger.LogServiceDirtyCode
 import com.study.aop.logger.data.Trace
+import org.springframework.stereotype.Component
 
-class LogHelperCallback<T>(
+@Component
+class LogHelperCallback(
     private val logService: LogServiceDirtyCode,
 ) {
 
 
-    fun execute(message: String, logCallCallback: LogCallCallBack<T>): T {
+    fun <T> execute(message: String, logCallCallback: LogCallCallBack<T>): T {
         var trace: Trace? = null
         return runCatching {
             trace = logService.begin(message)
