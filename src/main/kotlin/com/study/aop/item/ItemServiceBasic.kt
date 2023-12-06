@@ -3,8 +3,8 @@ package com.study.aop.item
 import org.springframework.stereotype.Service
 
 @Service
-class ItemService(
-    private val itemRepository: ItemRepository
+class ItemServiceBasic(
+    private val itemRepository: ItemRepositoryBasic
 ) {
     fun getItems(): List<Item> {
         return itemRepository.findItems()

@@ -3,7 +3,7 @@ package com.study.aop.item
 import org.springframework.stereotype.Repository
 
 @Repository
-class ItemRepository {
+class ItemRepositoryBasic {
 
     val storage = hashMapOf<String, Item>()
 

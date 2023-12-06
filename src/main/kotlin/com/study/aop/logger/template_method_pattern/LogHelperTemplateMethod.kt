@@ -18,7 +18,7 @@ abstract class LogHelperTemplateMethod<T>(
         }.onSuccess {
             logService.finish(trace!!)
         }.onFailure {
-            logService.execption(trace!!)
+            logService.execption(trace!!, it)
             throw it
         }.getOrThrow()
     }

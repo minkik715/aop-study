@@ -25,11 +25,11 @@ class LogServiceDirtyCode {
         complete(trace)
     }
 
-    fun execption(trace: Trace) {
-        complete(trace)
+    fun execption(trace: Trace, e: Throwable) {
+        complete(trace, e)
     }
 
-    private fun complete(trace: Trace, e: Exception? = null) {
+    private fun complete(trace: Trace, e: Throwable? = null) {
         val id = trace.traceId.id
         val depth = trace.traceId.depth
         val domain = trace.domain

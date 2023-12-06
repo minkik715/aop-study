@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*
 
 
 @RestController
-@RequestMapping("/api/strategy/item")
+@RequestMapping("/api/callback/item")
 class ItemControllerTemplateCallback(
     private val itemService: ItemServiceTemplateCallback,
     private val logHelperCallback: LogHelperCallback

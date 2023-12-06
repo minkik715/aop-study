@@ -26,7 +26,7 @@ class ItemControllerDirtyCode(
         }.onSuccess {
             logService.finish(trace!!)
         }.onFailure {
-            logService.execption(trace!!)
+            logService.execption(trace!!, it)
             throw it
         }.getOrThrow()
     }
@@ -41,7 +41,7 @@ class ItemControllerDirtyCode(
         }.onSuccess {
             logService.finish(trace!!)
         }.onFailure {
-            logService.execption(trace!!)
+            logService.execption(trace!!, it)
             throw it
         }.getOrThrow()
     }
