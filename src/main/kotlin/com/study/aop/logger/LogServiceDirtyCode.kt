@@ -5,11 +5,9 @@ import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.stereotype.Service
 import java.lang.StringBuilder
 
-@Service
-@Qualifier("LogServiceDirtyCode")
 class LogServiceDirtyCode {
 
-    val traceThreadLocal = ThreadLocal<Trace.TraceId>()
+    private val traceThreadLocal = ThreadLocal<Trace.TraceId>()
 
 
     fun begin(domain: String): Trace {
