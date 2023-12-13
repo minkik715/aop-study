@@ -1,7 +1,7 @@
 package com.study.aop.jdk_dynamic_proxy.impl
 
 import com.study.aop.item.Item
-import com.study.aop.jdk_dynamic_proxy.`interface`.ItemRepositoryJdkProxy
+import com.study.aop.jdk_dynamic_proxy.interfaces.ItemRepositoryJdkProxy
 
 class ItemRepositoryJdkProxyImpl : ItemRepositoryJdkProxy {
 

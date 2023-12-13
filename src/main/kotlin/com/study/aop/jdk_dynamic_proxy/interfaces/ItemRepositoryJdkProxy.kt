@@ -1,4 +1,4 @@
-package com.study.aop.jdk_dynamic_proxy.`interface`
+package com.study.aop.jdk_dynamic_proxy.interfaces
 
 import com.study.aop.item.Item
 

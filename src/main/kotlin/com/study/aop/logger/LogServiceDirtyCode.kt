@@ -2,10 +2,12 @@ package com.study.aop.logger
 
 import com.study.aop.logger.data.Trace
 import org.springframework.beans.factory.annotation.Qualifier
+import org.springframework.stereotype.Component
 import org.springframework.stereotype.Service
 import java.lang.StringBuilder
 
-class LogServiceDirtyCode {
+@Service
+class LogServiceDirtyCode() {
 
     private val traceThreadLocal = ThreadLocal<Trace.TraceId>()
 

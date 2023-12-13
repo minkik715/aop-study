@@ -2,8 +2,8 @@ package com.study.aop.jdk_dynamic_proxy.impl
 
 import com.study.aop.item.Item
 import com.study.aop.item.ItemDTO
-import com.study.aop.jdk_dynamic_proxy.`interface`.ItemRepositoryJdkProxy
-import com.study.aop.jdk_dynamic_proxy.`interface`.ItemServiceJdkProxy
+import com.study.aop.jdk_dynamic_proxy.interfaces.ItemRepositoryJdkProxy
+import com.study.aop.jdk_dynamic_proxy.interfaces.ItemServiceJdkProxy
 
 class ItemServiceJdkProxyImpl(
     private val itemRepository: ItemRepositoryJdkProxy
