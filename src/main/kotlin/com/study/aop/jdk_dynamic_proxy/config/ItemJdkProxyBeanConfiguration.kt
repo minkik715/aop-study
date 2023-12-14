@@ -13,8 +13,8 @@ import org.springframework.context.annotation.ComponentScan
 import org.springframework.context.annotation.Configuration
 import java.lang.reflect.Proxy
 
-@Configuration
-@ComponentScan(basePackages = ["com.study.aop.logger"])
+//@Configuration
+//@ComponentScan(basePackages = ["com.study.aop.logger"])
 class ItemJdkProxyBeanConfiguration {
     @Bean
     fun itemControllerJdkProxy(logService: LogServiceDirtyCode): ItemControllerJdkProxy {
