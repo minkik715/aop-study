@@ -6,7 +6,7 @@ import com.study.aop.logger.LogServiceDirtyCode
 import com.study.aop.logger.strategy_pattern.LogHelperStrategy
 import org.springframework.web.bind.annotation.*
 
-@ResponseBody
+@RestController
 @RequestMapping("/api/decorator/item")
 interface ItemController {
 
