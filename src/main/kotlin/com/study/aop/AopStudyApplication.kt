@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Bean
 import org.springframework.web.servlet.config.annotation.EnableWebMvc
 
 @EnableWebMvc
-@SpringBootApplication(scanBasePackages = ["com.study.aop.advisor"])
+@SpringBootApplication(scanBasePackages = ["com.study.aop.bean_post_processor", "com.study.aop.item"])
 class AopStudyApplication {
     @Bean
     fun logService(): LogServiceDirtyCode {
