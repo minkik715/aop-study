@@ -8,7 +8,6 @@ import org.aspectj.lang.annotation.Aspect
 import org.springframework.stereotype.Component
 
 @Aspect
-@Component
 class LogAspect(
     private val logService: LogServiceDirtyCode
 ) {

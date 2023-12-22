@@ -9,8 +9,6 @@ class LogBeanPostProcessor(
     private val advisor: Advisor
 ) : BeanPostProcessor {
 
-
-
     override fun postProcessAfterInitialization(bean: Any, beanName: String): Any? {
 
         val beanPackage = bean.javaClass.packageName
